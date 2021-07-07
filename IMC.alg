@@ -4,7 +4,7 @@ var
    altura, peso, IMC: real
 inicio
       Escreval("Responda às perguntas abaixo para calcular seu IMC.")
-      Escreval("Digite sua altura atual em M(use ponto ao invés de vírgula)")
+      Escreval("Digite sua altura atual em Metros(use ponto ao invés de vírgula)")
       Leia(altura)
       Escreval("Digite seu peso atual em Kg(use ponto ao invés de vírgula)")
       Leia(peso)
