@@ -1,26 +1,33 @@
-algoritmo "nomeprojeto"
+algoritmo "semnome"
 var
    nome: caractere
-   salario_fixo, total_vendas: real
+   contador_global: inteiro
+   notas: vetor[1..3] de real
+   media_global: real
 
-Procedimento pagamento()
+Funcao calcular_media(): real
 var
-   salario_total: real
+   contador_local: inteiro
+   soma_local, media_local: real
 Inicio
-      salario_total <- salario_fixo + (total_vendas * 0.15)
-      escreval("nome:", nome)
-      escreval("salario fixo:", salario_fixo)
-      escreva("salario total:", salario_total)
-FimProcedimento
+      contador_local <- 1
+      repita
+          soma_local <- soma_local + notas[contador_local]
+          contador_local <- contador_local + 1
+      ate (contador_local = 4)
+      media_local <- soma_local / 3
+      retorne media_local
+FimFuncao
 
 inicio
-      escreva("digite o nome a ser usado: ")
-      Leia(nome)
-      escreva("agora, digite o salario fixo da pessoa: ")
-      leia(salario_fixo)
-      escreva("por ultimo, digite, em dinheiro, o total de vendas: ")
-      leia(total_vendas)
-      //15% de comissao
-      pagamento()
-      
+      escreva("escreva o nome a ser usado: ")
+      leia(nome)
+      contador_global := 1
+      enquanto (contador_global <> 4) faca
+          escreva("digite a", contador_global, " nota do aluno: ")
+              leia(notas[contador_global])
+          contador_global <- contador_global + 1
+      FimEnquanto
+      media_global <- calcular_media()
+      escreva("o aluno(a) ", nome, " obteve uma media de: ", media_global:1:1)
 fimalgoritmo
