@@ -1,18 +1,26 @@
-algoritmo "Operações aritméticas com dois números reais"
+algoritmo "nomeprojeto"
 var
-   primeiro_numero, segundo_numero: real
-   somar, subtrair, multiplicar, dividir: real
+   nome: caractere
+   salario_fixo, total_vendas: real
+
+Procedimento pagamento()
+var
+   salario_total: real
+Inicio
+      salario_total <- salario_fixo + (total_vendas * 0.15)
+      escreval("nome:", nome)
+      escreval("salario fixo:", salario_fixo)
+      escreva("salario total:", salario_total)
+FimProcedimento
+
 inicio
-      Escreval("Digite o primeiro número: ")
-      Leia(primeiro_numero)
-      Escreval("Digite o segundo número: ")
-      Leia(segundo_numero)
-      somar <- primeiro_numero + segundo_numero
-      subtrair <- primeiro_numero - segundo_numero
-      multiplicar <- primeiro_numero * segundo_numero
-      dividir <- primeiro_numero / segundo_numero
-      Escreval("A soma entre", primeiro_numero, " e", segundo_numero, " é:", somar)
-      Escreval("A subtração de", primeiro_numero, " por", segundo_numero, " é:", subtrair)
-      Escreval("A multiplicação entre", primeiro_numero, " e", segundo_numero, " é:", multiplicar)
-      Escreva("A divisão de", primeiro_numero, " por", segundo_numero, " é:", dividir)
+      escreva("digite o nome a ser usado: ")
+      Leia(nome)
+      escreva("agora, digite o salario fixo da pessoa: ")
+      leia(salario_fixo)
+      escreva("por ultimo, digite, em dinheiro, o total de vendas: ")
+      leia(total_vendas)
+      //15% de comissao
+      pagamento()
+      
 fimalgoritmo
