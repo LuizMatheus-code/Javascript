@@ -1,33 +1,25 @@
 algoritmo "semnome"
 var
-   nome: caractere
-   contador_global: inteiro
-   notas: vetor[1..3] de real
-   media_global: real
-
-Funcao calcular_media(): real
+   custo_fabrica, valor_final: real
+Funcao calcular_valor(): real
 var
-   contador_local: inteiro
-   soma_local, media_local: real
+   imposto, porcentagem_distribuidor: real
 Inicio
-      contador_local <- 1
-      repita
-          soma_local <- soma_local + notas[contador_local]
-          contador_local <- contador_local + 1
-      ate (contador_local = 4)
-      media_local <- soma_local / 3
-      retorne media_local
+      imposto <- (custo_fabrica * (45/100))
+      custo_fabrica <- custo_fabrica + imposto
+      
+      porcentagem_distribuidor <- custo_fabrica * 0.28
+      custo_fabrica <- custo_fabrica + porcentagem_distribuidor
+      
+      retorne custo_fabrica
 FimFuncao
 
 inicio
-      escreva("escreva o nome a ser usado: ")
-      leia(nome)
-      contador_global := 1
-      enquanto (contador_global <> 4) faca
-          escreva("digite a", contador_global, " nota do aluno: ")
-              leia(notas[contador_global])
-          contador_global <- contador_global + 1
-      FimEnquanto
-      media_global <- calcular_media()
-      escreva("o aluno(a) ", nome, " obteve uma media de: ", media_global:1:1)
+      escreva("informe o custo de fabrica do carro: ")
+      leia(custo_fabrica)
+      // (custo_fabrica + impostos[45%]) + percentual do distribuidor(28%)
+      valor_final := calcular_valor()
+      escreval("impostos: 45%")
+      escreval("percentual do distribuidor(sobre os impostos): 28%")
+      escreval("custo do consumidor: ", valor_final:2:2)
 fimalgoritmo
