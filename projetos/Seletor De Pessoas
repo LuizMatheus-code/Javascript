@@ -1,0 +1,77 @@
+algoritmo "SeletorDePessoas"
+var
+   genero, cor_cabelo, continuar: caractere
+   idade: inteiro
+   cabelo_invalido: logico
+inicio
+   repita
+      escreval("====================")
+      escreval(" Seletor de pessoas ")
+      escreval("====================")
+      escreval("qual o genero?")
+      enquanto (genero <> "1") e (genero <> "2") e (genero <> "3") faca
+         escreval("--------------------")
+         escreval("[1] Masculino")
+         escreval("[2] Feminino")
+         escreval("[3] Nao binario")
+         escreval("--------------------")
+         escreva("Resposta: ")
+         leia(genero)
+         se (genero <> "1") e (genero <> "2") e (genero <> "3") entao
+            limpatela()
+            escreval("resposta invalida")
+         fimse
+      fimenquanto
+         escolha genero
+            caso "1"
+               genero <- "Masculino"
+            caso "2"
+               genero <- "Feminino"
+            caso "3"
+               genero <- "Nao binario"
+         fimescolha
+      idade <- 0
+      enquanto (0 >= idade) ou (idade > 100) faca
+         escreva("qual a idade? ")
+         leia(idade)
+         se (0 >= idade) ou (idade > 100) entao
+            limpatela()
+            escreval("resposta invalida")
+            escreval("a idade precisa estar entre 1 e 100")
+            escreval("-----------------------------------")
+         fimse
+      fimenquanto
+      cabelo_invalido <- verdadeiro
+      enquanto (cabelo_invalido = verdadeiro) faca
+         escreval("qual a cor do cabelo? ")
+         escreval("--------------------")
+         escreval("[1] Preto")
+         escreval("[2] Castanho")
+         escreval("[3] Loiro")
+         escreval("[4] Ruivo")
+         escreval("--------------------")
+         escreva("resposta: ")
+         leia(cor_cabelo)
+         escolha cor_cabelo
+            caso "1"
+               cor_cabelo <- "Preto"
+               cabelo_invalido <- falso
+            caso "2"
+               cor_cabelo <- "Castanho"
+               cabelo_invalido <- falso
+            caso "3"
+               cor_cabelo <- "Loiro"
+               cabelo_invalido <- falso
+            caso "4"
+               cor_cabelo <- "Ruivo"
+               cabelo_invalido <- falso
+            outrocaso
+               limpatela()
+               escreval("resposta invalida")
+         fimescolha
+      fimenquanto
+      escreva("quer continuar? [s/n]: ")
+      leia(continuar)
+      limpatela()
+   ate (continuar = "n")
+fimalgoritmo
