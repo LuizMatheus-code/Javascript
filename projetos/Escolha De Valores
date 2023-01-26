@@ -1,0 +1,27 @@
+algoritmo "EscolhaDeValores"
+var
+   contador, numero, soma_par, soma_total, div_cinco, nulo: inteiro
+   media: real
+inicio
+      para contador <- 1 ate 10 faca
+           escreva("Digite o", contador, "º numero: ")
+           leia(numero)
+           soma_total <- soma_total + numero
+           se (numero % 2 = 0) entao
+              soma_par <- soma_par + numero
+           fimse
+           se (numero % 5 = 0) entao
+              div_cinco <- div_cinco + 1
+           fimse
+           se (numero = 0) entao
+                nulo <- nulo + 1
+           fimse
+      fimpara
+      media := soma_total / contador
+      escreval("---------------------------")
+      escreval("Soma total:", soma_total)
+      escreval("Media:", media)
+      escreval("Divisivel por cinco:", div_cinco)
+      escreval("Valores nulos:", nulo)
+      escreval("Soma dos valores pares:", soma_par)
+fimalgoritmo
