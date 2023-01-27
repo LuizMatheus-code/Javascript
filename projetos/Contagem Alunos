@@ -1,0 +1,42 @@
+algoritmo "Contagem Alunos"
+var
+   nome: vetor[1..4] de caractere
+   nota1: vetor[1..4] de real
+   nota2: vetor[1..4] de real
+   media: vetor[1..4] de real
+   situacao: vetor[1..4] de caractere
+   contagem_acima: inteiro
+   contagem_abaixo: inteiro
+   contador: inteiro
+   media_turma: real
+inicio
+      para contador <- 1 ate 4 faca
+             escreval("-=-=-=-=-=-=-=-=-=")
+             escreval("Aluno", contador)
+             escreva("Nome:")
+             leia(nome[contador])
+             escreva("Primeira nota: ")
+             leia(nota1[contador])
+             escreva("Segunda nota: ")
+             leia(nota2[contador])
+             media[contador] <- (nota1[contador] + nota2[contador]) / 2
+             media_turma <- media_turma + media[contador]
+             se (media[contador] >= 7) entao
+                  situacao[contador] <- "(acima da media)"
+                  contagem_acima <- contagem_acima + 1
+             senao
+                  situacao[contador] <- "(abaixo da media)"
+                  contagem_abaixo <- contagem_abaixo + 1
+             fimse
+      fimpara
+      media_turma <- media_turma / contador
+      escreval("-=-=-=-=-=-=-=-=-=")
+      limpatela()
+      para contador <- 1 ate 4 faca
+             escreval(nome[contador]:15, media[contador]:4:1, situacao[contador])
+      fimpara
+      escreval("---------------------------------------")
+      escreval("a media da turma foi", media_turma)
+      escreval("Temos", contagem_acima, " alunos acima da media")
+      escreval("Temos", contagem_abaixo, " alunos abaixo da media")
+fimalgoritmo
