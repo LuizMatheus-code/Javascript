@@ -3,7 +3,8 @@ programa
 /*
 	Autor: Luiz Matheus
 	Data: 09/04/2023
-	Descrição: Solicita uma distância em metros e retorna todas as outras unidades de medida.
+	Descrição: Solicita a largura e altura de uma parede, depois, mostra a área formada por esse números,
+	então mostra a quantidade de latas de tinta para pintar a parede, considerando que 1 lata pinta 2m.
 */
 	inclua biblioteca Matematica --> mat
 	funcao inicio()
