@@ -5,7 +5,6 @@ programa
 	Data: 09/04/2023
 	Descrição: Solicita duas notas e depois mostra as duas junto com a média entre elas.
 */
-	inclua biblioteca Tipos --> t
 	funcao inicio()
 	{
 	
