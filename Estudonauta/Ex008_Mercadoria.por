@@ -6,6 +6,7 @@ programa
 	Descrição: Solicita o preço do produto e o percentual de desconto, depois, mostra o preço novo com desconto já incluso.
 */
 	
+	inclua biblioteca Matematica
 	funcao inicio()
 	{
 	
@@ -15,6 +16,6 @@ programa
 		escreva("Qual é percentual de desconto? ")
 		leia(desconto)
 		preco_novo = preco - (preco * (desconto/100))
-		escreva(preco, " R$ com ", desconto, "% de desconto resulta em ", preco_novo, " R$")
+		escreva(preco, " R$ com ", desconto, "% de desconto resulta em ", Matematica.arredondar(preco_novo, 2), " R$")
 	}
 }
